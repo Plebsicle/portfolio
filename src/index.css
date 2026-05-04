@@ -3,6 +3,32 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --color-background: 232 228 221;
+    --color-surface: 245 243 238;
+    --color-primary: 232 228 221;
+    --color-dark: 17 17 17;
+    --color-accent: 230 59 46;
+    
+    --color-inverse: 17 17 17;
+    --color-inverse-content: 232 228 221;
+  }
+
+  .dark {
+    --color-background: 13 13 18;
+    --color-surface: 20 20 26;
+    --color-primary: 13 13 18;
+    --color-dark: 232 228 221;
+    --color-accent: 216 49 36;
+    
+    --color-inverse: 10 10 15;
+    --color-inverse-content: 232 228 221;
+  }
+
+  body {
+    @apply bg-background text-dark transition-colors duration-300;
+  }
+
   body::after {
     content: "";
     position: fixed;

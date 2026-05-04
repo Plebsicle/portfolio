@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Code2, Terminal, Award, BookOpen, Layers } from 'lucide-react';
 
 const SkillTag = ({ children }) => (
-  <span className="font-mono text-sm bg-dark/5 border border-dark/10 px-4 py-2 rounded-lg text-dark/80 font-semibold hover:bg-dark hover:text-primary transition-colors cursor-default">
+  <span className="font-mono text-sm bg-inverse/5 border border-dark/10 px-4 py-2 rounded-lg text-dark/80 font-semibold hover:bg-inverse hover:text-inverse-content transition-colors cursor-default">
     {children}
   </span>
 );
@@ -74,7 +74,7 @@ const About = () => {
                 <h3 className="font-sans font-bold text-2xl mb-2">Indian Institute of Information Technology</h3>
                 <p className="font-mono text-dark/70 mb-4">Vadodara, India</p>
                 <div className="flex items-center gap-4 font-mono text-sm">
-                  <span className="bg-dark/5 px-3 py-1 rounded-md">B.Tech in CSE</span>
+                  <span className="bg-inverse/5 px-3 py-1 rounded-md">B.Tech in CSE</span>
                   <span className="text-accent font-bold">GPA: 8.36 / 10.0</span>
                 </div>
               </div>

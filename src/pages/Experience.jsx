@@ -11,7 +11,7 @@ const ExperienceCard = ({ role, company, type, timeline, descriptions, focus }) 
           <h2 className="font-sans font-bold text-3xl md:text-4xl mb-2">{role} — {company}</h2>
           <p className="font-mono text-accent font-bold text-lg">{type}</p>
         </div>
-        <span className="font-mono text-sm bg-dark/5 px-4 py-2 rounded-full border border-dark/10 whitespace-nowrap">{timeline}</span>
+        <span className="font-mono text-sm bg-inverse/5 px-4 py-2 rounded-full border border-dark/10 whitespace-nowrap">{timeline}</span>
       </div>
       <div className="space-y-4 mb-10">
         {descriptions.map((desc, i) => (
@@ -25,7 +25,7 @@ const ExperienceCard = ({ role, company, type, timeline, descriptions, focus }) 
           <h4 className="font-sans font-bold text-xl mb-6 text-dark/80">CURRENT FOCUS</h4>
           <div className="flex flex-wrap gap-4 font-mono text-sm">
             {focus.map((item, i) => (
-              <span key={i} className="bg-dark text-primary px-4 py-2 rounded-md hover:bg-accent transition-colors cursor-default">
+              <span key={i} className="bg-inverse text-inverse-content px-4 py-2 rounded-md hover:bg-accent transition-colors cursor-default">
                 {item}
               </span>
             ))}

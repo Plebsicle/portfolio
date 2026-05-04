@@ -7,10 +7,10 @@ const ContactItem = ({ icon: Icon, label, value, href }) => (
     href={href} 
     target="_blank" 
     rel="noreferrer"
-    className="flex items-center justify-between p-6 border-b border-dark/10 hover:bg-dark/5 transition-colors group"
+    className="flex items-center justify-between p-6 border-b border-dark/10 hover:bg-inverse/5 transition-colors group"
   >
     <div className="flex items-center gap-6">
-      <div className="w-12 h-12 bg-dark rounded-full flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+      <div className="w-12 h-12 bg-inverse rounded-full flex items-center justify-center text-inverse-content group-hover:scale-110 transition-transform">
         <Icon className="w-5 h-5" />
       </div>
       <div>

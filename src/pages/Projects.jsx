@@ -11,14 +11,14 @@ const ProjectCard = ({ project }) => {
           <div className="flex items-center gap-4 mb-4">
             <h2 className="font-sans font-bold text-3xl md:text-5xl text-dark tracking-tight">{project.title}</h2>
             {project.live && (
-              <a href={project.live} target="_blank" rel="noreferrer" className="bg-accent text-primary px-3 py-1 rounded-full text-xs font-bold font-sans tracking-wide hover:scale-105 transition-transform flex items-center gap-1">
+              <a href={project.live} target="_blank" rel="noreferrer" className="bg-accent text-inverse-content px-3 py-1 rounded-full text-xs font-bold font-sans tracking-wide hover:scale-105 transition-transform flex items-center gap-1">
                 LIVE <ExternalLink className="w-3 h-3" />
               </a>
             )}
           </div>
           <p className="font-mono text-dark/60 text-lg">{project.description}</p>
         </div>
-        <a href={project.github} target="_blank" rel="noreferrer" className="flex items-center gap-2 font-mono text-sm border border-dark/20 px-4 py-2 rounded-full hover:bg-dark hover:text-primary transition-colors">
+        <a href={project.github} target="_blank" rel="noreferrer" className="flex items-center gap-2 font-mono text-sm border border-dark/20 px-4 py-2 rounded-full hover:bg-inverse hover:text-inverse-content transition-colors">
           <Github className="w-4 h-4" /> View Source <ArrowUpRight className="w-4 h-4" />
         </a>
       </div>
@@ -38,13 +38,13 @@ const ProjectCard = ({ project }) => {
         </div>
         
         <div>
-          <div className="bg-dark text-primary rounded-2xl p-6 border border-dark/20">
+          <div className="bg-inverse text-inverse-content rounded-2xl p-6 border border-dark/20">
             <h4 className="font-sans font-bold text-xl mb-4 flex items-center gap-2">
               <Zap className="w-5 h-5 text-accent" /> Tech Stack
             </h4>
             <div className="flex flex-wrap gap-2 mb-6">
               {project.stack.map(tech => (
-                <span key={tech} className="bg-primary/10 px-3 py-1 rounded-full font-mono text-xs text-primary/80">
+                <span key={tech} className="bg-primary/10 px-3 py-1 rounded-full font-mono text-xs text-inverse-content/80">
                   {tech}
                 </span>
               ))}
@@ -55,7 +55,7 @@ const ProjectCard = ({ project }) => {
                 <h4 className="font-sans font-bold text-xl mb-4 flex items-center gap-2 mt-8">
                   <Database className="w-5 h-5 text-accent" /> Performance
                 </h4>
-                <div className="font-mono text-sm text-primary/70">
+                <div className="font-mono text-sm text-inverse-content/70">
                   {project.performance}
                 </div>
               </>

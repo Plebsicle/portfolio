@@ -11,7 +11,7 @@ import Experience from './pages/Experience';
 function App() {
   return (
     <Router>
-      <main className="bg-primary min-h-screen font-sans text-dark flex flex-col">
+      <main className="bg-background min-h-screen font-sans text-dark flex flex-col transition-colors duration-300">
         <Navbar />
         <div className="flex-1">
           <Routes>

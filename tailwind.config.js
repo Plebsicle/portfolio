@@ -4,13 +4,17 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        primary: '#E8E4DD',
-        accent: '#E63B2E',
-        background: '#F5F3EE',
-        dark: '#111111'
+        primary: 'rgb(var(--color-primary) / <alpha-value>)',
+        accent: 'rgb(var(--color-accent) / <alpha-value>)',
+        background: 'rgb(var(--color-background) / <alpha-value>)',
+        dark: 'rgb(var(--color-dark) / <alpha-value>)',
+        surface: 'rgb(var(--color-surface) / <alpha-value>)',
+        inverse: 'rgb(var(--color-inverse) / <alpha-value>)',
+        'inverse-content': 'rgb(var(--color-inverse-content) / <alpha-value>)',
       },
       fontFamily: {
         sans: ['Space Grotesk', 'sans-serif'],
