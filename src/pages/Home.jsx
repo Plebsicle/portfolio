@@ -62,7 +62,7 @@ const Hero = () => {
             </Button>
           </Link>
           <Link to="/experience">
-            <Button variant="outline">
+            <Button variant="outline-light">
               View Experience
             </Button>
           </Link>

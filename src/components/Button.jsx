@@ -6,6 +6,7 @@ const Button = ({ children, className = '', variant = 'accent', ...props }) => {
   const variants = {
     accent: "bg-accent text-primary px-8 py-4",
     outline: "bg-transparent text-dark border border-dark/20 px-8 py-4 hover:border-dark",
+    "outline-light": "bg-transparent text-primary border border-primary/50 px-8 py-4 hover:bg-primary/10 hover:border-primary",
     dark: "bg-dark text-primary px-8 py-4"
   };
 
