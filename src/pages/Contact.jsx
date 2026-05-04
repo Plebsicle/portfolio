@@ -34,9 +34,6 @@ const Contact = () => {
           <h1 className="font-sans font-bold text-6xl md:text-8xl tracking-tighter text-dark mb-6">
             Initiate <span className="font-drama italic text-accent">Handshake.</span>
           </h1>
-          <p className="font-mono text-xl text-dark/60 leading-relaxed max-w-xl">
-            Currently open to opportunities in backend engineering, distributed systems, and real-time infrastructure.
-          </p>
         </div>
 
         <div className="bg-background rounded-[2rem] border border-dark/10 shadow-lg overflow-hidden mb-12">
