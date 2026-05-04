@@ -1,0 +1,253 @@
+\documentclass[10pt, letterpaper]{article}
+
+%
+% PACKAGES
+%
+\usepackage[
+    ignoreheadfoot,
+    top=2cm,
+    bottom=2cm,
+    left=2cm,
+    right=2cm,
+    footskip=1.0cm,
+]{geometry}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[
+    pdftitle={Praval Parikh},
+    pdfauthor={Praval Parikh},
+    colorlinks=true,
+    urlcolor=primaryColor
+]{hyperref}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{bookmark}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{ifthen}
+\usepackage{needspace}
+\usepackage{iftex}
+
+%
+% PDF-SPECIFIC CONFIG
+%
+\ifPDFTeX
+    \input{glyphtounicode}
+    \pdfgentounicode=1
+    \usepackage[utf8]{inputenc}
+    \usepackage{lmodern}
+\fi
+
+%
+% CUSTOM COLORS & FONTS
+%
+\definecolor{primaryColor}{RGB}{0, 79, 144}
+
+%
+% LAYOUT & STYLE
+%
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0.5cm}
+
+% Section title formatting (compact)
+\titleformat{\section}{\needspace{4\baselineskip}\bfseries\large}{}{0pt}{}[\vspace{1pt}\titlerule]
+\titlespacing{\section}{0pt}{0.3cm}{0.2cm} % left, before, after (reduced from 0.4cm/0.3cm)
+
+% Custom command for consistent project spacing (compact)
+\newcommand{\projectsep}{\vspace{0.15cm}} % (reduced from 0.3cm)
+
+% Custom command for contact info separator
+\newcommand{\contactseparator}{\kern 0.1cm \color{gray!70} | \kern 0.1cm}
+
+% Hyperlink formatting (removes default arrow)
+\let\hrefWithoutArrow\href
+\renewcommand{\href}[2]{\hrefWithoutArrow{#1}{\ifthenelse{\equal{#2}{}}{ }{#2 }\raisebox{.15ex}{\footnotesize \faExternalLink*}}}
+
+%
+% CUSTOM ENVIRONMENTS
+%
+% Highlights environment (list with compact spacing)
+\newenvironment{highlights}{
+    \begin{itemize}[
+        topsep=0.1cm,
+        parsep=0.05cm,
+        partopsep=0pt,
+        itemsep=0cm, % (reduced from 0.05cm)
+        leftmargin=0.4cm + 10pt
+    ]
+}{
+    \end{itemize}
+}
+
+% Entry for a single column
+\newenvironment{onecolentry}{
+    \begin{adjustwidth}{0.2cm}{0.2cm}
+}{
+    \end{adjustwidth}
+}
+
+% Entry for two columns (e.g., Title on left, Date/Link on right)
+\newenvironment{twocolentry}[2][]{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5cm}
+    \begin{paracol}{2}
+}{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+% Header environment
+\newenvironment{header}{
+    \setlength{\topsep}{0pt}\par\kern\topsep\centering\linespread{1.4} % (linespread reduced from 1.5)
+}{
+    \par\kern\topsep
+}
+
+
+\begin{document}
+
+%
+% HEADER
+%
+\begin{header}
+    \textbf{\fontsize{24pt}{24pt}\selectfont Praval Hitesh Parikh}
+
+    \vspace{0.15cm} % (reduced from 0.2cm)
+    \small
+    \mbox{\hrefWithoutArrow{mailto:praval.parikh@gmail.com}{\color{black}{\faEnvelope[regular]}\hspace*{0.13cm}praval.parikh@gmail.com}}
+    \contactseparator
+    \mbox{\hrefWithoutArrow{tel:+91-74900-42418}{\color{black}{\faPhone*}\hspace*{0.13cm}7490042418}}
+    \contactseparator
+    \mbox{\hrefWithoutArrow{https://www.linkedin.com/in/praval-parikh/}{\color{black}{\faLinkedinIn}\hspace*{0.13cm}linkedin.com/in/praval-parikh}}
+    \contactseparator
+    \mbox{\hrefWithoutArrow{https://github.com/Plebsicle}{\color{black}{\faGithub}\hspace*{0.13cm}github.com/Plebsicle}}
+\end{header}
+
+%
+% SUMMARY
+%
+\section{Summary}
+\begin{onecolentry}
+    \textit{CSE undergraduate with a strong foundation in backend systems and distributed architectures. Passionate about building reliable software through clean design, testing, and automation.}
+\end{onecolentry}
+
+
+
+
+%
+% EDUCATION
+%
+\section{Education}
+\begin{twocolentry}{\textbf{Gandhinagar, India} \\ }
+    \textbf{Indian Institute of Information Technology Vadodara}
+
+    \textit{B.Tech in Computer Science \& Engineering}
+\end{twocolentry}
+
+\begin{onecolentry}
+    \begin{highlights}
+        \item Cumulative GPA: 8.36 / 10.0
+        \item Relevant Coursework: Data Structures & Algorithms, DBMS, SWE
+    \end{highlights}
+\end{onecolentry}
+
+%
+% PROJECTS
+%
+\section{Projects}
+
+\begin{twocolentry}{\textit{\href{https://github.com/Plebsicle/feature-flags}{GitHub Link}} \textbar \textit{\href{https://bitswitch.tech}{Live}}}
+    \textbf{Feature Flag Management System}
+\end{twocolentry}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Built a feature flag service with real-time SDK-based evaluation, custom rollout rules, and environment isolation.
+        \item Used Redis caching for low-latency evaluation and PostgreSQL for persistent rule storage.
+        \item Enabled Slack alerts, kill switch functionality, and environment-level metrics for production observability.
+        \item Secured APIs with role-based access control and session management.
+        \item Developed a responsive admin dashboard using Next.js and Tailwind for managing flags and usage insights.
+        \item Written unit tests using Vitest with mocked Redis and database clients, helping catch critical bugs in
+evaluation and rollout logic; planning CI/CD integration for automated test workflows.
+
+        \item \textbf{Tech Stack:} TypeScript, Node.js, Express, PostgreSQL, Redis, Next.js, Tailwind
+    \end{highlights}
+\end{onecolentry}
+
+
+
+
+
+
+\projectsep
+
+\begin{twocolentry}{\textit{\href{https://github.com/Plebsicle/microfin}{GitHub Link}}}
+    \textbf{Scalable Financial Transactions System}
+\end{twocolentry}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Architected a distributed backend capable of 3,600+ RPS with strong ACID guarantees using PostgreSQL + PgBouncer.
+        \item Leveraged Kafka for asynchronous processing with deduplication, idempotency, and failure recovery.
+        \item Used Redis for atomic balance updates and real-time caching to reduce DB pressure.
+        \item Introduced worker hashing for concurrency control and integrated monitoring via Prometheus and Grafana.
+        \item Load tested the system under concurrent pressure using K6 to validate throughput and latency.
+        \item Unit tests written using Vitest with mocked Redis and database clients, helping identify edge-case bugs and consistency issues during development.
+        \item \textbf{Tech Stack:} TypeScript, PostgreSQL, Kafka, Redis, NGINX, Docker, Prometheus, Grafana
+    \end{highlights}
+\end{onecolentry}
+
+
+
+
+\projectsep
+
+\begin{twocolentry}{\textit{\href{https://github.com/Plebsicle/Medication-Management}{GitHub Link}} \textbar \textit{\href{https://medman.app}{Live}}}
+    \textbf{Medication Management System}
+\end{twocolentry}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Built a full-stack system for tracking medications and scheduling SMS/email reminders using Twilio.
+        \item Enabled secure medical document upload via AWS S3 presigned URLs and OAuth2-based login.
+        \item Integrated OpenAI API to build a chatbot for answering patient queries from within the app.
+        \item \textbf{Tech Stack:} TypeScript, Node.js, Express, PostgreSQL, Redis, React.js, Tailwind, AWS S3
+    \end{highlights}
+\end{onecolentry}
+
+
+
+
+
+%
+% TECHNICAL SKILLS
+%
+\section{Technical Skills}
+\begin{onecolentry}
+\textbf{Languages:} JavaScript, TypeScript, SQL, C++ \\
+\textbf{Tools/Frameworks:} Node.js, Express, Redis, PostgreSQL, Kafka, Docker, Prometheus, Vitest, K6 \\
+\textbf{Frontend:} React, Tailwind CSS \\
+\textbf{Other:} Git, GitHub, Postman, GitHub Actions, REST APIs
+\end{onecolentry}
+
+
+%
+% ACHIEVEMENTS
+%
+\section{Achievements}
+\begin{onecolentry}
+    \begin{highlights}
+        \item Solved 400+ problems on Codeforces with a peak rating of 1296 (Pupil).
+        \item Solved 300+ problems on LeetCode across various difficulty levels.
+    \end{highlights}
+\end{onecolentry}
+
+\end{document}
