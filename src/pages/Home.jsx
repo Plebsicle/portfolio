@@ -264,11 +264,11 @@ const Philosophy = () => {
 
   return (
     <section id="philosophy" ref={container} className="relative py-40 px-8 md:px-16 bg-inverse text-inverse-content overflow-hidden">
-      <div className="absolute inset-0 z-0 opacity-20">
+      <div className="absolute inset-0 z-0 opacity-20 dark:opacity-10">
         <img 
-          src="https://images.unsplash.com/photo-1502621035541-d6b38c201886?q=80&w=2070&auto=format&fit=crop" 
-          alt="Raw materials texture" 
-          className="w-full h-full object-cover"
+          src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?q=80&w=2070&auto=format&fit=crop" 
+          alt="Concrete texture" 
+          className="w-full h-full object-cover dark:invert grayscale"
         />
       </div>
       
